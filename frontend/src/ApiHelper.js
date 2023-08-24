@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:8080';
+const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:3000';
 
 class Api {
   static async request(endpoint, data = {}, method = 'get') {
@@ -24,7 +24,7 @@ class Api {
   //   Register user
 
   static async register(userData) {
-    const user = await this.request(`/users`, userData, 'post');
+    const user = await this.request(`users`, userData, 'post');
 
     return user;
   }
@@ -32,27 +32,27 @@ class Api {
   //   Get specific user by id
 
   static async getUser(id) {
-    const user = await this.request(`/users/${id}`);
+    const user = await this.request(`users/${id}`);
     return user;
   }
 
   //   Get all users
   static async getUsers() {
-    const users = await this.request(`/users`);
+    const users = await this.request(`users`);
     return users;
   }
 
   // Delete user
 
   static async delete(id) {
-    const user = await this.request(`/users/${id}`, {}, 'delete');
+    const user = await this.request(`users/${id}`, {}, 'delete');
     return user;
   }
 
   //   Update user
 
   static async update(userData, id) {
-    const user = await this.request(`/users/${id}`, userData, 'put');
+    const user = await this.request(`users/${id}`, userData, 'put');
     return user;
   }
 }
