@@ -6,11 +6,13 @@ import './UserCard.scss';
 import { useState } from 'react';
 import Api from '../../ApiHelper';
 import UpdateUserForm from '../UpdateUserForm/UpdateUserForm';
+import DeleteWarningModal from '../DeleteWarningModal/DeleteWarningModal';
 
 const UserCard = ({ user }) => {
   const { state, id } = user;
   const [active, setActive] = useState(state);
   const [modalShow, setModalShow] = useState(false);
+  const [deleteModalShow, setDeleteModalShow] = useState(false);
   const titleCaseState = state === 'active' ? 'Active' : 'Pending';
 
   const handleActivate = async () => {
@@ -33,6 +35,7 @@ const UserCard = ({ user }) => {
           icon={faTrashCan}
           style={{ color: '#f20707' }}
           className='delete-icon'
+          onClick={() => setDeleteModalShow(true)}
         />
         <Card.Body>
           <p
@@ -66,6 +69,11 @@ const UserCard = ({ user }) => {
           )}
         </div>
       </Card>
+      <DeleteWarningModal
+        show={deleteModalShow}
+        onHide={() => setDeleteModalShow(false)}
+        user={user}
+      />
     </>
   );
 };

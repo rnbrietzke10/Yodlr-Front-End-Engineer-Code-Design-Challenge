@@ -1,0 +1,19 @@
+.Homepage {
+  height: 92vh;
+
+  width: 100%;
+
+  background-image: linear-gradient(
+    to top,
+    #212529,
+    #2d4354,
+    #326384,
+    #2e85b6,
+    #12a9eb
+  );
+
+  h1 {
+    color: #fff;
+    font-size: 5rem;
+  }
+}

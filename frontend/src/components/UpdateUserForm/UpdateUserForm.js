@@ -78,7 +78,7 @@ const UpdateUserForm = props => {
             />
           </div>
           <div class='mb-3'>
-            <label for='lastName' class='form-label'>
+            <label htmlFor='lastName' className='form-label'>
               Last Name
             </label>
             <input

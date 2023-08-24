@@ -35,22 +35,39 @@ const RegisterForm = () => {
     }
   };
   return (
-    <div>
-      <div>Resgister:</div>
-      <Form onSubmit={handleSubmit}>
+    <div className='d-flex flex-column align-items-center  m-5 '>
+      <h3 className='align-self-start'>Resgister:</h3>
+      <Form onSubmit={handleSubmit} className='w-75 mt-3'>
         <Form.Group className='mb-3' controlId='firstName'>
           <Form.Label>First Name</Form.Label>
-          <Form.Control type='text' placeholder='First Name' />
+          <Form.Control
+            name='firstName'
+            value={userData.itemName}
+            onChange={handleChange}
+            type='text'
+            placeholder='First Name'
+          />
         </Form.Group>
         <Form.Group className='mb-3' controlId='lastName'>
           <Form.Label>Last Name</Form.Label>
-          <Form.Control type='text' placeholder='Last Name' />
+          <Form.Control
+            name='lastName'
+            value={userData.itemName}
+            onChange={handleChange}
+            type='text'
+            placeholder='Last Name'
+          />
         </Form.Group>
         <Form.Group className='mb-3' controlId='email'>
           <Form.Label>Email address</Form.Label>
-          <Form.Control type='email' placeholder='Enter email' />
+          <Form.Control
+            type='email'
+            placeholder='Email'
+            name='email'
+            value={userData.itemName}
+            onChange={handleChange}
+          />
         </Form.Group>
-
         <Button variant='primary' type='submit'>
           Submit
         </Button>

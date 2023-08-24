@@ -1,9 +1,11 @@
-import React from 'react';
+import './HomePage.scss';
 
 const HomePage = () => {
   return (
-    <div>
-      <h1>Yodlr Design Challenge</h1>
+    <div className='Homepage  d-flex justify-content-center align-items-center'>
+      <div className='HomePage-card'>
+        <h1>Welcome to Yodlr</h1>
+      </div>
     </div>
   );
 };
